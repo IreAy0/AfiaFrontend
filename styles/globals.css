@@ -1,0 +1,40 @@
+@import "vendor";
+@import 'animation';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #E8E8E8;
+}
+.section-header {
+  color: #707070;
+  text-transform: capitalize;
+  font-size:20px;
+  font-weight:300
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #EA8000 !important;
+}
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #fff!important;
+  opacity: 1!important;
+}
+.swiper-button-next, .swiper-button-prev{
+  color: #EA8000 !important
+}
