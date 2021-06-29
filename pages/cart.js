@@ -13,18 +13,15 @@ import { getStrapiMedia } from "../utils/medias";
 
 const CategoryPage = ({ category }) => {
   const {removeFromCart, cart} = useGlobalContext()
-  console.log("cart", cart)
-  const [products, setProducts] = useState({})
+  const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     
       const storedNames = JSON.parse(window.localStorage.getItem("allEntries")); 
       
         setLoading(false);
-        setProducts(storedNames);
+        setProducts(storedNames || []);
   }, [cart])
-
-  //  console.log(products);
   
   
   return (
@@ -50,13 +47,6 @@ const CategoryPage = ({ category }) => {
                        
                         
                         <tbody class="text-gray-600 text-sm font-light">
-                        {/* { products.length > 0  ? <div> {products.map((product) => (
-        <div>
-          <li>{product.item.title}, {product.item.id}</li>
-          <Button onClick={(e) => { e.preventDefault(); removeFromCart(product.item.id)}} type="button" variant="orange" >Delete</Button>
-        </div>
-        ))}</div> : <div>Cart is empty</div> } */}
-              
                            {products.map((product, index) => (<tr class="border-b border-gray-200 hover:bg-gray-100">
                                 <td key={index} class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
@@ -74,7 +64,15 @@ const CategoryPage = ({ category }) => {
                                 </td>
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex items-center justify-center">
-                                        <img class="w-10 h-10 rounded-md border-gray-200 border transform hover:scale-125" src={getStrapiMedia(product.item.image[0].formats.thumbnail.url)}/>
+                                    {product.item.image.length > 0 ?  <img
+                                            class="w-10 h-10 rounded-md border-gray-200 border transform hover:scale-125" 
+                                            src={getStrapiMedia(product.item.image[0].formats.thumbnail.url)}
+                                             alt={product.item.title}
+                                            />: 
+                                            <img  class="w-10 h-10 rounded-md border-gray-200 border transform hover:scale-125" 
+                                             src="http://placehold.jp/3d4070/ffffff/x.png"/>
+                                        }  
+                                        
                                       </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">

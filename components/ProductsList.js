@@ -10,7 +10,6 @@ const ProductsList = ({ products = [] }) => {
 
   const {addToCart} = useGlobalContext()
   
-  // console.log(cart);
   return (
     <div className=" grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 mt-8">
       
@@ -28,7 +27,7 @@ const ProductsList = ({ products = [] }) => {
                   src={getStrapiMedia(_product.image[0].formats.thumbnail.url)}
                   alt={_product.title}
                 />: 
-                <img src="http://placehold.jp/3d4070/ffffff/x.png"/>
+                <img   className="crop mx-auto" src="http://placehold.jp/3d4070/ffffff/x.png"/>
               }  
                 
               </div>

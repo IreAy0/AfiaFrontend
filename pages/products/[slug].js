@@ -67,7 +67,7 @@ const ProductPage = ({ product = [] }) => {
           
             <h2>Categories: 
             {product.categories.map(category=>{
-              console.log(category.name);
+              
               return(
               <span className="text-gray-400 font-light "> {category.name},</span>
               )})}
