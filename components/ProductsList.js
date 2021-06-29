@@ -7,7 +7,7 @@ import {useGlobalContext} from '../components/Context/context'
 
 
 const ProductsList = ({ products = [] }) => {
-console.log(products[2].image[0].formats.thumbnail.url);
+
   const {addToCart} = useGlobalContext()
   
   // console.log(cart);
