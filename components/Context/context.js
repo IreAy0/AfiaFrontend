@@ -17,7 +17,7 @@ const AppProvider = ({children}) => {
       type: 'ADD_TO_CART',
       payload:{
         item,
-       qty: 0
+       qty: 1
       }
     
     })

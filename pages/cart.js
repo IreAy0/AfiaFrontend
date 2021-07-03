@@ -108,7 +108,7 @@ const CategoryPage = ({ category }) => {
                           
                           
                           </tbody>
-                    </table> : "Cart is Empty"}
+                    </table> : <p className="text-center">Cart is Empty</p> }
                     
                 </div>
             </div>
