@@ -4,11 +4,22 @@ import reducer from './reducers';
 
 const AppContext = React.createContext()
 
-const initialState = { cart: [] };
+// const storage = JSON.parse(window.localStorage.getItem("allEntries"));
+
 
 const AppProvider = ({children}) => {
+ 
+  const [key, setKey] = useState([])
 
-  
+  useEffect(() => {
+    const value = localStorage.getItem("allEntries");
+    const user = !!value ? JSON.parse(value) : undefined;
+    setKey(user)
+  }, [])
+
+  // console.log('context storage',storage);
+  const initialState = { cart: key };
+console.log('context cart',initialState.cart);
   const [state, dispatch] = useReducer(reducer, initialState)
   // console.log(initialState.cart);
 
@@ -39,6 +50,5 @@ const removeFromCart = (id) => {
 export const useGlobalContext = () => {
   return useContext(AppContext);
 }
-export const useStateValue = () => useContext(AppContext);
 
 export  {AppContext, AppProvider}

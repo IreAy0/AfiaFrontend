@@ -31,6 +31,7 @@ const CategoryPage = ({ category }) => {
       <div className=" bg-white rounded-md ">
      
 <div class="overflow-x-auto">
+    {products.length}
         <div class="   flex items-center justify-center font-sans overflow-hidden">
             <div class="w-full ">
                 <div class="bg-white shadow-md rounded py-6">

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import Container from '../Container'
@@ -6,8 +6,16 @@ import Logo from '../icons/LogoIcon';
 import Button from '../Button';
 import Search from '../Search';
 import {ArrowDown, Cart, HelpIcon, Profile} from '../icons/homeIcons/index'
+import { useGlobalContext } from '../Context/context';
 
 export default function Header({position= ""}) {
+  const { cart} = useGlobalContext() 
+  console.log(cart);
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+ 
+  
+  console.log('cart-header',cart);
   return (
     <>
     <header className={`header ${position} z-30 w-full body-font sticky-header`}>
@@ -49,13 +57,20 @@ export default function Header({position= ""}) {
               </Link> */}
               <Link href="/cart">
                 <a className={` hover:text-green  text-sm flex items-end`}>
-                <span>
-                    <Cart />
-                  </span>
+                
+                  <span class="relative inline-block">
+                  <Cart />
+                  <span 
+                  class="absolute top-0 right-0 inline-flex items-center 
+                  justify-center px-1 py-1 text-xs font-bold leading-none 
+                  text-red-100 transform -translate-x-9	 -translate-y-1/2 
+                  bg-red-600 rounded-full">{cart.length}</span>
                   Cart
-                  <span>
+                </span>
+                 
+                  {/* <span>
                     <ArrowDown />
-                  </span>
+                  </span> */}
                   
                  
                   </a>
