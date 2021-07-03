@@ -75,6 +75,12 @@ const CategoryPage = ({ category }) => {
                                         
                                       </div>
                                 </td>
+                                <td class="py-3 px-6 text-left ">
+                                    <div class="">
+                                        
+                                        <span class="	">{product.qty}</span>
+                                    </div>
+                                </td>
                                 <td class="py-3 px-6 text-center">
                                     <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">{product.item.price}</span>
                                 </td>

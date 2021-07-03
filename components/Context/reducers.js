@@ -1,6 +1,7 @@
 
 const reducer = (state , action) => {
   const { cart } = state;
+  
   switch (action.type) {
     case 'ADD_TO_CART':
      const prod = action.payload
