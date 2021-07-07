@@ -1,8 +1,13 @@
+import {useContext} from 'react'
 import Link from "next/link";
 import { getStrapiMedia } from "../../utils/medias";
 import Button from "../Button";
+import  {CartContext} from "../Context/CartContext";
+
+
 
 const SelectedProductsList = ({ selectedProducts = [] }) => {
+
   return (
     <div className=" grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-4 my-3">
       
@@ -34,8 +39,10 @@ const SelectedProductsList = ({ selectedProducts = [] }) => {
               </div>
             </a>
           </Link>
-          <Button variant="orange" className="w-full justify-center rounder-top-0">Add to cart</Button>
-
+          {/* <Button variant="orange"  onClick={() => addProduct(product)} className="w-full justify-center rounder-top-0">Add to cart</Button>
+{InCart(product) ?           <Button variant="orange"  onClick={() => increase(product)} className="w-full justify-center rounder-top-0">Add More</Button>
+ :           <Button variant="orange"  onClick={() => addProduct(product)} className="w-full justify-center rounder-top-0">Add to cart</Button>
+} */}
         </div>
       ))}
     </div>

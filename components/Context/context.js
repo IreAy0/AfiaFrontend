@@ -4,22 +4,16 @@ import reducer from './reducers';
 
 const AppContext = React.createContext()
 
-// const storage = JSON.parse(window.localStorage.getItem("allEntries"));
-
-
 const AppProvider = ({children}) => {
  
   const [key, setKey] = useState([])
 
-  useEffect(() => {
-    const value = localStorage.getItem("allEntries");
-    const user = !!value ? JSON.parse(value) : undefined;
-    setKey(user)
-  }, [])
-
+  // useEffect(() => {
+  //   const storage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+  //   setKey(storage)
+  // }, [])
   // console.log('context storage',storage);
-  const initialState = { cart: key };
-console.log('context cart',initialState.cart);
+  const initialState = { cart : [] };
   const [state, dispatch] = useReducer(reducer, initialState)
   // console.log(initialState.cart);
 

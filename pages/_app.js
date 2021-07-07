@@ -4,14 +4,14 @@ import Layout from "../components/Layout/index";
 import { getCategories } from "../utils/api";
 import "../styles/index.css";
 import globalStyle  from '../styles/globals.css';
-import {AppProvider }from'../components/Context/context';
+import CartContextProvider from'../components/Context/CartContext';
 
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <AppProvider>
+    <CartContextProvider>
     <Component {...pageProps} />
-    </AppProvider>
+    </CartContextProvider>
    
     
   );
