@@ -11,7 +11,6 @@ export const CartContext = createContext()
    
 const initialState = { cartItems: storage, ...sumItems(storage), checkout: false, item: []};
 
-console.log(storage);
 
 const CartContextProvider = ({children}) => {
 
