@@ -115,7 +115,6 @@ const CategoryPage = ({ category }) => {
                                                 </td>
                                             </tr>))}
 
-
                                         </tbody>
                                     </table> 
                                     
