@@ -72,7 +72,7 @@ const CategoryPage = ({ category }) => {
                             <tr className="border-b border-gray-200 hover:bg-gray-100">
                               <td
                               colSpan="3"
-                              key={index} 
+                              key={index}
                               className=" text-left border-r"
                               >
                                 <div className="flex  bg-white items-center ">
@@ -81,7 +81,8 @@ const CategoryPage = ({ category }) => {
                                       <img
                                         className="    "
                                         src={getStrapiMedia(
-                                            product.image[0].formats.thumbnail.url         )}
+                                        product.image[0].formats.thumbnail.url
+                                                 )}
                                         alt={product.title}
                                         />
                                         ) : (
