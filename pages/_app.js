@@ -3,20 +3,17 @@ import Head from "next/head";
 import Layout from "../components/Layout/index";
 import { getCategories } from "../utils/api";
 import "../styles/index.css";
-import globalStyle  from '../styles/globals.css';
-import CartContextProvider from'../components/Context/CartContext';
+import globalStyle from "../styles/globals.css";
+import CartContextProvider from "../components/Context/CartContext";
 
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <CartContextProvider>
-    <Component {...pageProps} />
+      <Component {...pageProps} />
     </CartContextProvider>
-   
-    
   );
 };
-
 // getInitialProps disables automatic static optimization for pages that don't
 // have getStaticProps. So [[...slug]] pages still get SSG.
 // Hopefully we can replace this with getStaticProps once this issue is fixed:

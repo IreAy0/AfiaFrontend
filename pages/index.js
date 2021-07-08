@@ -15,17 +15,17 @@ const HomePage = ({ products, banners, popular, features }) => {
 
   return (
     <Layout title="Home" >
-    <Container className=" ">
-      <Carousel banners={banners} products={products}/>
-       </Container>
-    <Container className=" my-6 ">
-    <FeaturedSection sectionTitle="popular products" myProducts={popular} />
-    </Container>
-    <Container className=" my-6 ">
-    <FeaturedSection  sectionTitle="featured products" myProducts={features}/>
-    </Container>
+      <Container className=" ">
+        <Carousel banners={banners} products={products} />
+      </Container>
+      <Container className=" my-6 ">
+        <FeaturedSection sectionTitle="popular products" myProducts={popular} />
+      </Container>
+      <Container className=" my-6 ">
+        <FeaturedSection sectionTitle="featured products" myProducts={features} />
+      </Container>
     </Layout>
-    
+
   );
 };
 
@@ -34,7 +34,7 @@ export async function getStaticProps() {
   const banners = await getBanners();
   const popular = await getPopulars();
   const features = await getFeatured();
-  return { props: { banners , products, popular, features } };
+  return { props: { banners, products, popular, features } };
 }
 
 export default HomePage;
