@@ -12,9 +12,9 @@ import { CartContext } from "../components/Context/CartContext";
 import Alert from "../components/Alert";
 
 const CategoryPage = ({ category }) => {
-    const { cartItems, increase, decrease, removeProduct, item } = useContext(CartContext)
-    const [items, setItems] = useState([]);
-    const [alertAdd, setAlertAdd] = useState(false);
+  const { cartItems, increase, decrease, removeProduct, item } = useContext( CartContext );
+  const [items, setItems] = useState([]);
+  const [alertAdd, setAlertAdd] = useState(false);
 
     useEffect(() => {
         var storage = localStorage.getItem("entries");
@@ -31,9 +31,9 @@ const CategoryPage = ({ category }) => {
         let total = (qty * price).toFixed(2);
         return total;
     };
-  return (
-    <Layout headerTwo={false}>
-      <Container className="my-6">
+    return (
+        <Layout headerTwo={false}>
+            <Container className="my-6">
                 {alertAdd && (
                     <Alert name={item.title} text={" Deleted from cart"} type={"remove"} />
                 )}

@@ -6,7 +6,6 @@ import "../styles/index.css";
 import globalStyle from "../styles/globals.css";
 import CartContextProvider from "../components/Context/CartContext";
 
-
 const MyApp = ({ Component, pageProps }) => {
   return (
     <CartContextProvider>
