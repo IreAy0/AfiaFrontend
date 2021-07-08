@@ -12,7 +12,9 @@ import { CartContext } from "../components/Context/CartContext";
 import Alert from "../components/Alert";
 
 const CategoryPage = ({ category }) => {
-  const { cartItems, increase, decrease, removeProduct, item } = useContext( CartContext )
+  const { cartItems, increase, decrease, removeProduct, item } = useContext( 
+    CartContext 
+  )
   const [items, setItems] = useState([]);
   const [alertAdd, setAlertAdd] = useState(false);
 
@@ -22,7 +24,8 @@ const CategoryPage = ({ category }) => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {  setAlertAdd(false);
+    const interval = setInterval(() => {  
+    setAlertAdd(false);
   }, 5000);
     return () => clearInterval(interval);
   }, []);
