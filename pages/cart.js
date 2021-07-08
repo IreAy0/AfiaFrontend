@@ -70,21 +70,24 @@ const CategoryPage = ({ category }) => {
                         <tbody className="text-gray-600 text-sm font-light">
                           {cartItems.map((product, index) => (
                             <tr className="border-b border-gray-200 hover:bg-gray-100">
-                              <td 
-                              colSpan="3" 
+                              <td
+                              colSpan="3"
                               key={index} 
                               className=" text-left border-r"
                               >
                                 <div className="flex  bg-white items-center ">
-                                      <div className="w-2/6 ">
-                                        {product.image.length > 0 ? (
-                                          <img
-                                            className="    "
-                                            src={getStrapiMedia(product.image[0].formats.thumbnail.url)}
-                                            alt={product.title}
-                                        />) :
-                                                                        <img className="  "
-                                                                            src="http://placehold.jp/3d4070/ffffff/x.png" />
+                                  <div className="w-2/6 ">
+                                    {product.image.length > 0 ? (
+                                      <img
+                                        className="    "
+                                        src={getStrapiMedia(
+                                            product.image[0].formats.thumbnail.url         )}
+                                        alt={product.title}
+                                        />
+                                        ) : (
+                                      <img 
+                                        className="  "
+                                        src="http://placehold.jp/3d4070/ffffff/x.png" />)
                                                                     }
                                                                 </div>
                                                                 <div className="w-5/6 ">
