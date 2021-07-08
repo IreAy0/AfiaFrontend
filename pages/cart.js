@@ -40,12 +40,11 @@ const CategoryPage = ({ category }) => {
           <Alert
             name={item.title}
             text={" Deleted from cart"}
-            type={"remove"} />
-                )}
-                <div className=" bg-white rounded-md ">
-
+            type={"remove"} 
+          />
+        )}
+        <div className=" bg-white rounded-md ">
                     <div className="overflow-x-auto">
-
                         <div className=" flex items-center justify-center font-sans overflow-hidden">
                             <div className="w-full ">
                                 <div className="bg-white shadow-md rounded ">
