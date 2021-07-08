@@ -1,18 +1,12 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
 import Container from "../components/Container";
 import Layout from "../components/Layout/index";
-import ProductsList from "../components/ProductsList";
-import { getCategories, getCategory } from "../utils/api";
-import FeaturedSection from "../components/Sections/FeaturedSection";
 import { useEffect, useState, useContext } from "react";
-import Button from "../components/Button/index";
 import { getStrapiMedia } from "../utils/medias";
 import { CartContext } from "../components/Context/CartContext";
 import Alert from "../components/Alert";
 
-const CategoryPage = ({ category }) => {
-  const { cartItems, increase, decrease, removeProduct, item } = useContext(
+const CategoryPage = () => {
+  const { cartItems, removeProduct, item } = useContext(
     CartContext
   );
   const [items, setItems] = useState([]);
