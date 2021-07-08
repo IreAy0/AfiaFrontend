@@ -25,7 +25,6 @@ export async function getCategory(slug) {
 export async function getProducts() {
   const products = await fetchAPI("/products");
   return products;
-  
 }
 
 export async function getProduct(slug) {
@@ -33,17 +32,17 @@ export async function getProduct(slug) {
   return products?.[0];
 }
 
-export async function getBanners(){
+export async function getBanners() {
   const banners = await fetchAPI("/banners");
   return banners;
 }
 
-export async function getPopulars(){
-  const popular = await fetchAPI("/popular-products")
+export async function getPopulars() {
+  const popular = await fetchAPI("/popular-products");
   return popular;
 }
 
-export async function getFeatured(){
+export async function getFeatured() {
   const features = await fetchAPI("/featureds");
-  return features
+  return features;
 }

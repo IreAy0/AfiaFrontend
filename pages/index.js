@@ -1,20 +1,18 @@
+import {
+  getProducts,
+  getBanners,
+  getPopulars,
+  getFeatured
+} from "../utils/api";
 
-import ProductsList from "../components/ProductsList";
-import { getProducts, getBanners, getPopulars, getFeatured } from "../utils/api";
-
-import Image from 'next/image'
-import Button from '../components/Button'
-import Carousel from '../components/Carousel'
-import Container from '../components/Container'
-import Layout from '../components/Layout/index'
-import styles from '../styles/Home.module.css';
+import Carousel from "../components/Carousel";
+import Container from "../components/Container";
+import Layout from "../components/Layout/index";
 import FeaturedSection from "../components/Sections/FeaturedSection";
 
-
 const HomePage = ({ products, banners, popular, features }) => {
-
   return (
-    <Layout title="Home" >
+    <Layout title="Home">
       <Container className=" ">
         <Carousel banners={banners} products={products} />
       </Container>
@@ -22,10 +20,12 @@ const HomePage = ({ products, banners, popular, features }) => {
         <FeaturedSection sectionTitle="popular products" myProducts={popular} />
       </Container>
       <Container className=" my-6 ">
-        <FeaturedSection sectionTitle="featured products" myProducts={features} />
+        <FeaturedSection
+          sectionTitle="featured products"
+          myProducts={features}
+        />
       </Container>
     </Layout>
-
   );
 };
 
