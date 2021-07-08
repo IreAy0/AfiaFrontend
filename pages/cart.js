@@ -19,11 +19,10 @@ const CategoryPage = ({ category }) => {
   useEffect(() => {
     var storage = localStorage.getItem("entries");
     setItems(storage);
-  }, [])
+  }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-    setAlertAdd(false);
+    const interval = setInterval(() => {  setAlertAdd(false);
   }, 5000);
     return () => clearInterval(interval);
   }, []);
