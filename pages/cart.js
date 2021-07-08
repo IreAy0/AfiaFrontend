@@ -59,13 +59,10 @@ const CategoryPage = ({ category }) => {
                             <th colSpan="3" className="py-3 px-6 text-left">
                               Quantity
                             </th>
-                            <th className="py-3 px-6 text-center">
-                              Quanity
-                            </th>
-                            <th className="py-3 px-6 text-center">
+                            <th colSpan="3" className="py-3 px-6 text-left">
                               Unit Price
                             </th>
-                            <th className="py-3 px-6 text-center">
+                            <th colSpan="3" className="py-3 px-6 text-left">
                               Subtotal
                             </th>
                           </tr>
