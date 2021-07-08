@@ -82,7 +82,7 @@ const CategoryPage = ({ category }) => {
                                         className="    "
                                         src={getStrapiMedia(
                                         product.image[0].formats.thumbnail.url
-                                                 )}
+                                      )}
                                         alt={product.title}
                                         />
                                         ) : (
