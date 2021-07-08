@@ -40,32 +40,26 @@ const CategoryPage = ({ category }) => {
           <Alert
             name={item.title}
             text={" Deleted from cart"}
-            type={"remove"} 
+            type={"remove"}
           />
         )}
         <div className=" bg-white rounded-md ">
-                    <div className="overflow-x-auto">
-                        <div className=" flex items-center justify-center font-sans overflow-hidden">
-                            <div className="w-full ">
-                                <div className="bg-white shadow-md rounded ">
-                                    {cartItems.length > 0 ?
-                                        <div>
-                                            <table className="min-w-max w-full table-fixed">
-                                                <thead>
-                                                    <tr className="bg-white border-b-2 text-gray-600 uppercase text-sm leading-normal">
-                                                        <th colSpan="3" className="py-3 px-6 text-left">Item</th>
-
-
-                                                        <th className="py-3 px-6 text-center">Quanity</th>
-                                                        <th className="py-3 px-6 text-center">Unit Price</th>
-
-                                                        <th className="py-3 px-6 text-center">Subtotal</th>
-
-                                                    </tr>
-                                                </thead>
-
-
-                                                <tbody className="text-gray-600 text-sm font-light">
+           <div className="overflow-x-auto">
+            <div className=" flex items-center justify-center font-sans overflow-hidden">
+             <div className="w-full ">
+              <div className="bg-white shadow-md rounded ">
+                {cartItems.length > 0 ?(
+                <div>
+                  <table className="min-w-max w-full table-fixed">
+                   <thead>
+                    <tr className="bg-white border-b-2 text-gray-600 uppercase text-sm leading-normal">
+                      <th colSpan="3" className="py-3 px-6 text-left">Item</th>
+                      <th className="py-3 px-6 text-center">Quanity</th>
+                      <th className="py-3 px-6 text-center">Unit Price</th>
+                      <th className="py-3 px-6 text-center">Subtotal</th>
+                    </tr>
+                   </thead>
+                   <tbody className="text-gray-600 text-sm font-light">
                                                     {cartItems.map((product, index) => (<tr className="border-b border-gray-200 hover:bg-gray-100">
                                                         <td colSpan="3" key={index} className=" text-left border-r">
 
@@ -123,7 +117,7 @@ const CategoryPage = ({ category }) => {
 
 
                                         </div>
-
+)
                                         :
 
                                         <p className="text-center">Cart is Empty</p>}
