@@ -25,7 +25,7 @@ const CategoryPage = ({ category }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-    setAlertAdd(false);
+      setAlertAdd(false);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -36,8 +36,11 @@ const CategoryPage = ({ category }) => {
   return (
     <Layout headerTwo={false}>
       <Container className="my-6">
-       {alertAdd && (
-                    <Alert name={item.title} text={" Deleted from cart"} type={"remove"} />
+        {alertAdd && (
+          <Alert
+            name={item.title}
+            text={" Deleted from cart"}
+            type={"remove"} />
                 )}
                 <div className=" bg-white rounded-md ">
 
