@@ -48,16 +48,16 @@ const CategoryPage = ({ category }) => {
             <div className=" flex items-center justify-center font-sans overflow-hidden">
               <div className="w-full ">
                 <div className="bg-white shadow-md rounded ">
-                  {cartItems.length > 0 ?(
-                   <div>
+                  {cartItems.length > 0 ? (
+                    <div>
                       <table className="min-w-max w-full table-fixed">
-                       <thead>
+                        <thead>
                           <tr className="bg-white border-b-2 text-gray-600 uppercase text-sm leading-normal">
                             <th colSpan="3" className="py-3 px-6 text-left">
-                                Item
+                              Item
                             </th>
                             <th className="py-3 px-6 text-center">
-                                Quanity
+                           Quanity
                             </th>
                             <th className="py-3 px-6 text-center">
                                 Unit Price
