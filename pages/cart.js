@@ -54,24 +54,28 @@ const CategoryPage = ({ category }) => {
                         <thead>
                           <tr className="bg-white border-b-2 text-gray-600 uppercase text-sm leading-normal">
                             <th colSpan="3" className="py-3 px-6 text-left">
-                              Item
+                            Item
                             </th>
                             <th className="py-3 px-6 text-center">
-                              Quanity
+                            Quanity
                             </th>
                             <th className="py-3 px-6 text-center">
-                              Unit Price
+                            Unit Price
                             </th>
                             <th className="py-3 px-6 text-center">
-                              Subtotal
+                            Subtotal
                             </th>
-                         </tr>
-                       </thead>
-                       <tbody className="text-gray-600 text-sm font-light">
+                          </tr>
+                        </thead>
+                        <tbody className="text-gray-600 text-sm font-light">
                           {cartItems.map((product, index) => (
-                           <tr className="border-b border-gray-200 hover:bg-gray-100">
-                              <td colSpan="3" key={index} className=" text-left border-r">
-                                  <div className="flex  bg-white items-center ">
+                            <tr className="border-b border-gray-200 hover:bg-gray-100">
+                              <td 
+                              colSpan="3" 
+                              key={index} 
+                              className=" text-left border-r"
+                              >
+                                <div className="flex  bg-white items-center ">
                                       <div className="w-2/6 ">
                                         {product.image.length > 0 ? (
                                           <img
