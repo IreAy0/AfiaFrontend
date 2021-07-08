@@ -12,25 +12,25 @@ import { CartContext } from "../components/Context/CartContext";
 import Alert from "../components/Alert";
 
 const CategoryPage = ({ category }) => {
-  const { cartItems, increase, decrease, removeProduct, item } = useContext( CartContext );
+  const { cartItems, increase, decrease, removeProduct, item } = useContext( CartContext )
   const [items, setItems] = useState([]);
   const [alertAdd, setAlertAdd] = useState(false);
 
-    useEffect(() => {
-        var storage = localStorage.getItem("entries");
-        setItems(storage);
-    }, [])
+  useEffect(() => {
+    var storage = localStorage.getItem("entries");
+    setItems(storage);
+  }, [])
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setAlertAdd(false);
-        }, 5000);
-        return () => clearInterval(interval);
-    }, []);
-    const subTotal = (qty, price) => {
-        let total = (qty * price).toFixed(2);
-        return total;
-    };
+  useEffect(() => {
+    const interval = setInterval(() => {
+    setAlertAdd(false);
+  }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+ const subTotal = (qty, price) => {
+    let total = (qty * price).toFixed(2);
+    return total;
+ };
     return (
         <Layout headerTwo={false}>
             <Container className="my-6">

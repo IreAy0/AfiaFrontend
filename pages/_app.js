@@ -1,6 +1,4 @@
 import App from "next/app";
-import Head from "next/head";
-import Layout from "../components/Layout/index";
 import { getCategories } from "../utils/api";
 import "../styles/index.css";
 import globalStyle from "../styles/globals.css";
