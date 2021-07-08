@@ -54,16 +54,16 @@ const CategoryPage = ({ category }) => {
                         <thead>
                           <tr className="bg-white border-b-2 text-gray-600 uppercase text-sm leading-normal">
                             <th colSpan="3" className="py-3 px-6 text-left">
-                            Item
+                              Item
                             </th>
                             <th className="py-3 px-6 text-center">
                             Quanity
                             </th>
                             <th className="py-3 px-6 text-center">
-                            Unit Price
+                              Unit Price
                             </th>
                             <th className="py-3 px-6 text-center">
-                            Subtotal
+                              Subtotal
                             </th>
                           </tr>
                         </thead>
