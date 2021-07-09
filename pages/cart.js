@@ -4,9 +4,11 @@ import { useEffect, useState, useContext } from "react";
 import { getStrapiMedia } from "../utils/medias";
 import { CartContext } from "../components/Context/CartContext";
 import Alert from "../components/Alert";
+import Button from "../components/Button";
 
 const CategoryPage = () => {
-  const { cartItems, removeProduct, item } = useContext(CartContext);
+  const { cartItems, removeProduct, item, total, increase, decrease } =
+    useContext(CartContext);
   const [alertAdd, setAlertAdd] = useState(false);
 
   useEffect(() => {
@@ -21,51 +23,35 @@ const CategoryPage = () => {
   };
   return (
     <Layout headerTwo={false}>
-      <Container className="my-6">
-        {alertAdd && (
-          <Alert
-            name={item.title}
-            text={" Deleted from cart"}
-            type={"remove"}
-          />
-        )}
-        <div className=" bg-white rounded-md ">
-          <div className="overflow-x-auto">
+      <Container className="my-6 ">
+        {alertAdd && <Alert text={" cart updated"} type={"add"} />}
+        <div className=" bg-white rounded-md container">
+          <div className="overflow-x-auto container">
             <div className=" flex items-center justify-center font-sans overflow-hidden">
               <div className="w-full ">
                 <div className="bg-white shadow-md rounded ">
                   {cartItems.length > 0 ? (
                     <div>
-                      <table className="min-w-max w-full table-fixed">
+                      <table className="min-w-max w-full table-auto">
                         <thead>
                           <tr className="bg-white border-b-2 text-gray-600 uppercase text-sm leading-normal">
-                            <th colSpan="3" className="py-3 px-6 text-left">
-                              Item
-                            </th>
-                            <th colSpan="3" className="py-3 px-6 text-left">
-                              Quantity
-                            </th>
-                            <th colSpan="3" className="py-3 px-6 text-left">
+                            <th className="py-3 px-6 text-left">Item</th>
+                            <th className="py-3 px-6 text-center">Quantity</th>
+                            <th className="py-3 px-6 text-center">
                               Unit Price
                             </th>
-                            <th colSpan="3" className="py-3 px-6 text-left">
-                              Subtotal
-                            </th>
+                            <th className="py-3 px-6 text-center">Subtotal</th>
                           </tr>
                         </thead>
                         <tbody className="text-gray-600 text-sm font-light">
                           {cartItems.map((product, index) => (
                             <tr className="border-b border-gray-200 hover:bg-gray-100">
-                              <td
-                                colSpan="3"
-                                key={index}
-                                className=" text-left border-r"
-                              >
+                              <td key={index} className=" text-left border-r">
                                 <div className="flex  bg-white items-center ">
-                                  <div className="w-2/6 ">
+                                  <div className="w-28 ">
                                     {product.image.length > 0 ? (
                                       <img
-                                        className="    "
+                                        className=" h-24	   "
                                         src={getStrapiMedia(
                                           product.image[0].formats.thumbnail.url
                                         )}
@@ -73,7 +59,7 @@ const CategoryPage = () => {
                                       />
                                     ) : (
                                       <img
-                                        className="  "
+                                        className=" h-24	 "
                                         alt="placeholder"
                                         src="http://placehold.jp/3d4070/ffffff/x.png"
                                       />
@@ -116,8 +102,39 @@ const CategoryPage = () => {
                               </td>
 
                               <td className="py-3 px-6 text-center border-r ">
-                                <div className="">
-                                  <span className="	">{product.quantity}</span>
+                                <div class="custom-number-input h-10 w-32 mx-auto">
+                                  <div class="flex flex-row h-14 w-full rounded-lg relative bg-transparent mt-1">
+                                    <button
+                                      onClick={() => {
+                                        decrease(product);
+                                        setAlertAdd(true);
+                                      }}
+                                      data-action="decrement"
+                                      class=" border text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
+                                    >
+                                      <span class="m-auto text-2xl font-thin">
+                                        −
+                                      </span>
+                                    </button>
+                                    <input
+                                      type="text"
+                                      class=" focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
+                                      name="custom-input-number"
+                                      value={product.quantity}
+                                    ></input>
+                                    <button
+                                      onClick={() => {
+                                        increase(product);
+                                        setAlertAdd(true);
+                                      }}
+                                      data-action="increment"
+                                      class="border text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
+                                    >
+                                      <span class="m-auto text-2xl font-thin">
+                                        +
+                                      </span>
+                                    </button>
+                                  </div>
                                 </div>
                               </td>
                               <td className="py-3 px-6 text-center border-r">
@@ -134,6 +151,32 @@ const CategoryPage = () => {
                           ))}
                         </tbody>
                       </table>
+                      <div class="px-5 bg-white py-5 flex flex-col  items-end xs:flex-row  flex-end  xs:justify-between">
+                        <div class="flex justify-between items-end w-1/6">
+                          <h6 className="font-bold">Total: </h6>
+                          <span className="text-orange-100 text-xl">
+                            {" "}
+                            {total}
+                          </span>
+                        </div>
+                        <span className="text-gray-400 text-sm">
+                          {" "}
+                          Delivery fee not included yet{" "}
+                        </span>
+                      </div>
+                      <div class="px-5 bg-white py-5 flex flex-col  items-end xs:flex-row  flex-end  xs:justify-between">
+                        <div class="flex justify-between items-end w-2/6">
+                          <Button className="w-1/2 mr-1 h-12" variant="orange">
+                            Continue Shopping
+                          </Button>
+                          <Button
+                            variant="green"
+                            className="h-12 w-1/2 ml-1 text-center justify-center"
+                          >
+                            Checkout
+                          </Button>
+                        </div>
+                      </div>
                     </div>
                   ) : (
                     <p className="text-center">Cart is Empty</p>

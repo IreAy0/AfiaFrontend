@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Alert({ name, count, alert, text, type = "add" }) {
+export default function Alert({ name = " ", count, alert, text, type = "add" }) {
   return (
     <>
       <div>
