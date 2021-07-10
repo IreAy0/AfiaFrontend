@@ -100,6 +100,7 @@ const CategoryPage = () => {
                                   </div>
                                 </div>
                               </td>
+                              {product.quantity <= 0 && removeProduct(product)}
 
                               <td className="py-3 px-6 text-center border-r ">
                                 <div class="custom-number-input h-10 w-32 mx-auto">

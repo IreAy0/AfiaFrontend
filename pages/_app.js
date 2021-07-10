@@ -1,6 +1,7 @@
 import App from "next/app";
 import { getCategories } from "../utils/api";
 import "../styles/index.css";
+import globalStyle from "../styles/globals.css";
 import CartContextProvider from "../components/Context/CartContext";
 
 const MyApp = ({ Component, pageProps }) => {

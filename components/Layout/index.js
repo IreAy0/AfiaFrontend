@@ -34,7 +34,7 @@ export default function Layout({ children, title, headerTwo = true }) {
       </Head>
       <Header />
       {headerTwo && <HeaderTwo />}
-      <main className="leading-loose main">{children}</main>
+      <main className="leading-loose main ">{children}</main>
     </div>
   );
 }
