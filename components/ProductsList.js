@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ReactPaginate from "react-paginate";
 import { useEffect, useState, useContext } from "react";
 import { getStrapiMedia } from "../utils/medias";
 import Button from "./Button";
@@ -9,7 +10,11 @@ const ProductsList = ({ products = [] }) => {
   const { addProduct, cartItems, increase, item, removeProduct, decrease } =
     useContext(CartContext);
   const [alertAdd, setAlertAdd] = useState(false);
-
+  // const [data, setData] = useState(products);
+  const [offset, setOffset] = useState(0);
+  const [data, setData] = useState([]);
+  const [perPage] = useState(8);
+  const [pageCount, setPageCount] = useState(0);
   const InCart = (product) => {
     return !!cartItems.find((item) => item.id === product.id);
   };
@@ -23,12 +28,29 @@ const ProductsList = ({ products = [] }) => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-
+  const getProducts = () => {
+    const sliceData = products.slice(offset, offset + perPage);
+    setData(sliceData);
+    setPageCount(Math.ceil(products.length / perPage));
+  };
+  const handlePageChange = (e) => {
+    const selectedPage = e.selected;
+    setOffset(Math.ceil(selectedPage * perPage));
+  };
+  useEffect(() => {
+    getProducts();
+  }, [offset]);
   return (
     <>
       {alertAdd && <Alert name={item.title} text={" Added to cart"} />}
-      <div className=" grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 mt-8">
-        {products.map((_product) => {
+      <div className="filter bg-white py-4 px-8">
+        <p className="text-sm text-gray-400">
+          {products.length} product(s) found
+        </p>
+      </div>
+
+      <div className=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4 my-4">
+        {data.map((_product) => {
           const Item = singleItem(_product);
 
           const remove = (product) => {
@@ -123,6 +145,19 @@ const ProductsList = ({ products = [] }) => {
           );
         })}
       </div>
+      <ReactPaginate
+        previousLabel={"|<"}
+        nextLabel={">|"}
+        breakLabel={"..."}
+        breakClassName={"break-me"}
+        pageCount={pageCount}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={5}
+        onPageChange={handlePageChange}
+        containerClassName={"pagination"}
+        subContainerClassName={"pages pagination"}
+        activeClassName={"active"}
+      />
     </>
   );
 };

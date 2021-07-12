@@ -120,8 +120,8 @@ const ProductPage = ({ product = [] }) => {
             <>
               {remove(product)}
               {InCart(product) ? (
-                <div class="custom-number-input h-10 w-full items-center  flex">
-                  <div class="flex flex-row h-14 w-1/3 rounded-lg relative bg-transparent mt-1">
+                <div class="custom-number-input h-10 w-full items-center  flex flex-col md:flex-row">
+                  <div class="flex flex-row h-14 md:w-1/3 rounded-lg relative bg-transparent mt-1">
                     <button
                       onClick={() => {
                         decrease(product);
@@ -149,7 +149,7 @@ const ProductPage = ({ product = [] }) => {
                       <span class="m-auto text-2xl font-thin">+</span>
                     </button>
                   </div>
-                  <p className="w-1/2">( {Item?.quantity} item(s) added )</p>
+                  <p className="md:w-1/2">( {Item?.quantity} item(s) added )</p>
                 </div>
               ) : (
                 <Button
