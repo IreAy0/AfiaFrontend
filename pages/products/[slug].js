@@ -22,7 +22,7 @@ import Alert from "../../components/Alert";
 SwiperCore.use([Navigation, EffectFade, Pagination, Scrollbar, A11y, Autoplay]);
 
 const ProductPage = ({ product = [] }) => {
-  const { addProduct, cartItems, increase, item, decrease, removeProduct } =
+  const { addProduct, cartItems, increase, decrease, removeProduct } =
     useContext(CartContext);
   const [alertAdd, setAlertAdd] = useState(false);
   const InCart = (product) => {

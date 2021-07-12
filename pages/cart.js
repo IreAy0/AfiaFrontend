@@ -7,7 +7,7 @@ import Alert from "../components/Alert";
 import Button from "../components/Button";
 
 const CategoryPage = () => {
-  const { cartItems, removeProduct, item, total, increase, decrease } =
+  const { cartItems, removeProduct, total, increase, decrease } =
     useContext(CartContext);
   const [alertAdd, setAlertAdd] = useState(false);
 

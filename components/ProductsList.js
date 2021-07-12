@@ -2,7 +2,6 @@ import Link from "next/link";
 import ReactPaginate from "react-paginate";
 import { useEffect, useState, useContext } from "react";
 import { getStrapiMedia } from "../utils/medias";
-import Button from "./Button";
 import { CartContext } from "../components/Context/CartContext";
 import Alert from "./Alert";
 
