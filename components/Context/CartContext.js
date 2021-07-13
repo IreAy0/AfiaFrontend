@@ -14,7 +14,8 @@ const initialState = {
   cartItems: storage,
   ...sumItems(storage),
   checkout: false,
-  item: []
+  item: [],
+  layout: "grid"
 };
 
 const CartContextProvider = ({ children }) => {
@@ -44,7 +45,12 @@ const CartContextProvider = ({ children }) => {
     console.log("CHECKOUT", state);
     dispatch({ type: "CHECKOUT" });
   };
-
+  const changeLayoutGrid = () => {
+    dispatch({ type: "CHANGE_VIEW_GRID" });
+  };
+  const changeLayoutList = () => {
+    dispatch({ type: "CHANGE_VIEW_LIST" });
+  };
   const contextValues = {
     removeProduct,
     addProduct,
@@ -52,6 +58,8 @@ const CartContextProvider = ({ children }) => {
     decrease,
     clearCart,
     handleCheckout,
+    changeLayoutGrid,
+    changeLayoutList,
     ...state
   };
 

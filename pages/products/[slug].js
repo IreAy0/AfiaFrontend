@@ -26,10 +26,10 @@ const ProductPage = ({ product = [] }) => {
     useContext(CartContext);
   const [alertAdd, setAlertAdd] = useState(false);
   const InCart = (product) => {
-    return !!cartItems.find((item) => item.id === product.id);
+    return !!cartItems?.find((item) => item.id === product.id);
   };
   const singleItem = (product) => {
-    return cartItems.find((item) => item.id === product?.id);
+    return cartItems?.find((item) => item.id === product?.id);
   };
 
   const Item = singleItem(product);
