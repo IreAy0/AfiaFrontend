@@ -62,12 +62,6 @@ export default function HeaderTwo({ position = "" }) {
               )}
             </div>
             <div></div>
-
-            <div>
-              <Button href="/" variant="green">
-                Sell on jalo
-              </Button>
-            </div>
           </Container>
         </nav>
       </header>

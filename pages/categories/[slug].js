@@ -16,7 +16,7 @@ const CategoryPage = ({ category = [] }) => {
     <Layout title={category.name}>
       <Container className="my-6">
         <div className=" bg-white rounded-md ">
-          <div className=" px-4 border-b flex justify-between">
+          <div className=" px-4 border-b flex justify-between items-center">
             <nav className="bg-grey-light  rounded font-sans w-full m-4">
               <ol className="list-reset flex text-grey-dark">
                 <li>
@@ -38,6 +38,26 @@ const CategoryPage = ({ category = [] }) => {
                 <li>{category.name}</li>
               </ol>
             </nav>
+            {/* <div className="lg:w-2/5">
+              <label class="text-gray-700 flex " for="animals">
+                Sort by:
+                <select
+                  id="animals"
+                  class="block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                  name="animals"
+                >
+                  <option value="" >
+                    Select an option
+                  </option>
+                  <option value="dog">Dog</option>
+                  <option value="cat">Cat</option>
+                  <option value="hamster">Hamster</option>
+                  <option value="parrot">Parrot</option>
+                  <option value="spider">Spider</option>
+                  <option value="goldfish">Goldfish</option>
+                </select>
+              </label>
+            </div> */}
           </div>
         </div>
 

@@ -17,11 +17,11 @@ export default function Header({ position = "" }) {
         <nav className="w-full flex flex-row items-center p-2 py-3 justify-between bg-white shadow-xs ">
           <Container className=" flex relative h-full  items-center justify-between">
             <Link href="/">
-              <a className=" text-lg text-gray-600 hidden md:flex">
+              <a className=" text-lg text-gray-600  md:flex">
                 <Logo height="50" width="150" />
               </a>
             </Link>
-            <div className="md:w-1/2">
+            <div className="hidden lg:block md:w-1/2">
               <Search />
             </div>
 
